@@ -1,2 +1,8 @@
-Hello there, here is some text.
-We are writing the text to the file.
+            Name   Score1    Score2    Score3   Average  Grade
+
+    Organa, Leia    98.00     95.50    100.00     97.83    A
+ Flinstone, Fred    65.00     74.50     76.25     71.92    C
+ Cooper, Sheldon   100.00    100.00     99.00     99.67    A
+     Marsh, Stan    89.00     84.00     80.50     84.50    B
+   Simpson, Lisa    93.00     94.50     92.00      0.00    F
+

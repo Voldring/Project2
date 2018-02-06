@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=NeubeckerIacobanGradeBook
+comment0.text=\r\n\ In\ this\ class\ we\ will\ be\ reading\ in\ from\ a\ .txt\ file\ and\ saving\ the\ data\ into\ two\ arrays\r\n\ With\ the\ information\ saved\ we\ will\ manipulate\ it\ to\ then\ compute\ score\ averages,\ determine\ their\ letter\ grades,\r\n\ and\ save\ the\ new\ data\ acquired\ into\ a\ different\ .txt\ file.\r\n\ Tyler\ Neubecker,\ Jacob\ Iacoban\r\n\ 1/30/18\r\n
+comment1.params=str\ studentscores
+comment1.target=void\ calculateAverages(java.lang.String[],\ double[][])
+comment2.params=grade\ studentscores
+comment2.target=void\ letterGrade(java.lang.String[],\ double[][])
+comment3.params=names\ studentscores
+comment3.target=void\ displayData(java.lang.String[],\ double[][])
+comment4.params=names\ studentscores\ grade
+comment4.target=void\ displayData2(java.lang.String[],\ double[][],\ java.lang.String[])
+comment5.params=divider
+comment5.target=void\ displayDivider(int)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment6.text=\ all\ of\ the\ required\ arays\ are\ created\ in\ the\ main\ method.\ not\ above\ as\ public\ because\ it\ will\ run\ into\ a\ \r\n\ \ \ \ \ \ \ non-static\ variable\ issue.\r\n\ \ \ \ \ \ \ we\ then\ call\ onto\ all\ of\ the\ required\ methods.\ I\ could\ have\ used\ super()\ for\ this\ because\ this\ is\r\n\ \ \ \ \ \ \ an\ extension\ of\ the\ external\ class,\ but\ i\ decided\ not\ to\ just\ to\ be\ safe\ and\ wanted\ to\ make\ sure\ everything\ worked\ good\r\n\ \ \ \ \ \ \ \r\n
+numComments=7

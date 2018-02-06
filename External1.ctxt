@@ -1,6 +1,10 @@
 #BlueJ class context
-comment0.params=mynames\ stuscores
-comment0.target=void\ readInData(java.lang.String[],\ double[][])
-comment1.params=names\ stuscores\ letter
-comment1.target=void\ writeData(java.lang.String[],\ double[][],\ char[])
-numComments=2
+comment0.target=External1
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ External1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=divider
+comment1.target=void\ displayDivider(int)
+comment2.params=names\ stuscores
+comment2.target=void\ readFile(java.lang.String[],\ double[][])
+comment3.params=names\ stuscores\ letter
+comment3.target=void\ writeData(java.lang.String[],\ double[][],\ java.lang.String[])
+numComments=4

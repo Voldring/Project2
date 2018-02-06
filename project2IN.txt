@@ -1,5 +1,9 @@
 Leia Organa 98.0 95.5 100.0
+
 Fred Flinstone 65.0 74.5 76.25
+
 Sheldon Cooper 100.0 100.0 99.0
+
 Stan Marsh 89.0 84.0 80.5
+
 Lisa Simpson 93.0 94.5 92.0
