@@ -1,0 +1,141 @@
+import java.io.*;
+import java.util.Scanner;
+
+class FGradebook{
+public static void line(int numdash){
+  for (int i = 1; i < numdash; i++){
+   System.out.print("=");
+  }
+}
+public static void line2(int numdash,PrintWriter p){
+  for (int i = 1; i < numdash; i++){
+   p.print("=");
+  }
+}
+public static void computeAverages (String [] str, double [][] stuscores){
+  //compute averages for each student
+  System.out.println();
+  System.out.println("\nComputing averages...");
+  double total;
+  //declare increments for loops
+  int j;
+  int i;
+  for(i=0; i<stuscores[i].length; i++){
+   total=0.0;
+   for (j=0; j<stuscores[i].length-1;j++)
+   {
+    total = total + stuscores[i][j];
+   }
+   if (j==stuscores[i].length-1){
+    stuscores[i][3]=total/3;
+    System.out.println("Average for "+str[i]+" is "+(total/3));
+   }
+  }
+}
+public static void displayData (String [] names,double [] [] stuscores){
+  // Display the student names and scores for each student in a nice format
+  //display dases by using method
+  System.out.print("\nDisplaying data as stored:\n");
+  line(60);
+  System.out.println();
+  System.out.printf("%16s %8s %9s %9s %9s\n", "Name", "Score1", "Score2", "Score3", "Average");
+  line(60);
+  System.out.println();
+  for (int i=0; i< names.length; i++){
+   System.out.printf("%16s", names[i]);
+   for (int j=0; j<stuscores[i].length-1; j++){
+    System.out.printf("%9.2f ", stuscores[i][j]);
+   }
+   System.out.println();
+  }
+}
+public static void displayData2(String [] names, double [][] stuscores, String [] letter){
+  // Display the student names, scores, average and letter grade for each student neatly
+  line(65);
+  System.out.println();
+  System.out.printf("%16s %8s %9s %9s %9s %6s\n", "Name", "Score1", "Score2", "Score3", "Average", "Grade");
+  line(65);
+  System.out.println();
+  for (int i=0; i< names.length; i++){
+   System.out.printf("%16s", names[i]);
+   for (int j=0; j<stuscores[i].length; j++){
+    System.out.printf("%9.2f ", stuscores[i][j]);
+   }
+   System.out.printf("%4s", letter[i]);
+   System.out.println();
+  }
+  System.out.println();
+}
+public static void readFile(String[] names,double[][] stuscores){
+  System.out.println("Reading from input file project2IN.txt");
+  try{
+   Scanner sc = new Scanner(new File("project2IN.txt"));
+   int i = 0;
+   String fn,ln;
+   while(sc.hasNext()){
+    fn = sc.next();
+    ln = sc.next();
+    names[i] = ln+", "+fn;
+    stuscores[i][0] = sc.nextDouble();
+    stuscores[i][1] = sc.nextDouble();
+    stuscores[i][2] = sc.nextDouble();
+    i++;
+    if(i == 5){
+     break;
+    }
+   }
+   System.out.println("Closing Input File");
+   sc.close();
+  }catch(Exception e){
+   e.printStackTrace();
+  }
+}
+public static void determineLetterGrade(String[] letter,double[][] stuscores){
+  for(int i = 0;i<letter.length;i++){
+   if(stuscores[i][3] >= 89.5){
+    letter[i] = "A";
+   }else if(stuscores[i][3] >= 79.5){
+    letter[i] = "B";
+   }else if(stuscores[i][3] >= 69.5){
+    letter[i] = "C";
+   }else if(stuscores[i][3] >= 59.5){
+    letter[i] = "D";
+   }else{
+    letter[i] = "F";
+   }
+  }
+}
+public static void writeData(String [] names, double [][] stuscores, String [] letter){
+  // Display the student names, scores, average and letter grade for each student neatl
+  System.out.println("Writting to output file project2OUT.txt");
+  try{
+   PrintWriter pw = new PrintWriter(new File("project2OUT.txt"));
+   line2(65,pw);
+   pw.printf("%16s %8s %9s %9s %9s %6s\n", "Name", "Score1", "Score2", "Score3", "Average", "Grade");
+   line2(65,pw);
+   for (int i=0; i< names.length; i++){
+    pw.printf("%16s", names[i]);
+    for (int j=0; j<stuscores[i].length; j++){
+     pw.printf("%9.2f ", stuscores[i][j]);
+    }
+    pw.printf("%4s", letter[i]);
+    pw.println();
+   }
+   pw.println();
+   System.out.println("Closing Output File");
+   pw.close();
+  }catch(Exception e){
+   e.printStackTrace();
+  }
+}
+public static void main(String[] args) {
+  String[] names = new String[5];
+  double[][] stuscores = new double[5][4];
+  String[] letter = new String[5];
+  readFile(names,stuscores);
+  displayData(names,stuscores);
+  computeAverages(names,stuscores);
+  determineLetterGrade(letter,stuscores);
+  displayData2(names,stuscores,letter);
+}
+}
